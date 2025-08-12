@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.custom-hover {
+  transition: box-shadow 0.3s ease;
+}
+.custom-hover:hover {
+  box-shadow: rgb(117, 119, 219) 0px 5px 15px;
+}
+
