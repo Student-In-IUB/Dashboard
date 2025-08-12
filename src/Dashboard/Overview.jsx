@@ -50,13 +50,13 @@ const lineChartData = [
 // --- Overview Component ---
 function Overview() {
   return (
-    <div className="w-full">
-      {/* Header */}
-      <div className="max-w-7xl mb-3 py-4 border-b-[#8EC5FF] z-3 border-b-1 sm:px-6 lg:px-8 shadow-lg">
+    <div className="w-full  ">
+      <div className="max-w-7xl mb-3 py-4  border-b-[#8EC5FF] z-3 border-b-1 sm:px-6 lg:px-8 shadow-lg">
         <h1 className="text-2xl font-semibold text-blue-600 drop-shadow-md">
           Overview
         </h1>
       </div>
+      {/* Header */}
 
       <main className="max-w-7xl mx-auto py-6 px-4 lg:px-8">
         {/* Stats Cards */}

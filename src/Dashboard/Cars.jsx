@@ -144,7 +144,7 @@ const Cars = () => {
           {statsData.map((stat, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300"
+              className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300 custom-hover hover:translate-y-1 duration-300 "
             >
               <div className="px-3 py-4 sm:px-4 sm:py-5 sm:p-6">
                 <span className="flex items-center text-xs sm:text-sm font-medium text-blue-600">
@@ -205,61 +205,65 @@ const Cars = () => {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  {["Name", "Category", "Price", "Passengers", "Actions"].map(
-                    (heading) => (
-                      <th
-                        key={heading}
-                        className="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                      >
-                        {heading}
-                      </th>
-                    )
-                  )}
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {carsList.map((car, index) => (
-                  <tr key={index}>
-                    <td className="px-3 py-3 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <img
-                          className="h-8 w-8 sm:h-10 sm:w-10 rounded-full"
-                          src={car.image}
-                          alt={car.name}
-                        />
-                        <span className="ml-2 sm:ml-4 text-xs sm:text-sm font-medium text-blue-700">
-                          {car.name}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-3 py-3 text-xs sm:text-sm text-blue-700">
-                      {car.category}
-                    </td>
-                    <td className="px-3 py-3 text-xs sm:text-sm text-blue-700">
-                      {car.price}
-                    </td>
-                    <td className="px-3 py-3 text-xs sm:text-sm text-blue-700">
-                      {car.passengers}
-                    </td>
-                    <td className="px-3 py-3 text-xs sm:text-sm text-blue-700">
-                      <div className="flex space-x-1 sm:space-x-2">
-                        <button className="text-indigo-500 hover:text-indigo-700">
-                          ✏️
-                        </button>
-                        <button className="text-red-500 hover:text-red-700">
-                          🗑️
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+         <div className="overflow-x-auto">
+  <table className="w-full table-fixed divide-y divide-gray-200">
+    <thead className="bg-gray-50">
+      <tr>
+        {["Name", "Category", "Price", "Passengers", "Actions"].map((heading, i) => (
+          <th
+            key={i}
+            className="px-2 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
+          >
+            {heading}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody className="bg-white divide-y divide-gray-200">
+      {carsList.map((car, index) => (
+        <tr key={index}>
+          {/* Name */}
+          <td className="px-2 py-2 whitespace-normal break-words">
+            <div className="flex items-center">
+              <img
+                className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex-shrink-0"
+                src={car.image}
+                alt={car.name}
+              />
+              <span className="ml-2 sm:ml-4 text-xs sm:text-sm font-medium text-blue-700 break-words">
+                {car.name}
+              </span>
+            </div>
+          </td>
+
+          {/* Category */}
+          <td className="px-2 py-2 text-xs sm:text-sm text-blue-700 whitespace-normal break-words">
+            {car.category}
+          </td>
+
+          {/* Price */}
+          <td className="px-2 py-2 text-xs sm:text-sm text-blue-700">
+            {car.price}
+          </td>
+
+          {/* Passengers */}
+          <td className="px-2 py-2 text-xs sm:text-sm text-blue-700">
+            {car.passengers}
+          </td>
+
+          {/* Actions */}
+          <td className="px-2 py-2 text-xs sm:text-sm text-blue-700">
+            <div className="flex space-x-1 sm:space-x-2">
+              <button className="text-indigo-500 hover:text-indigo-700">✏️</button>
+              <button className="text-red-500 hover:text-red-700">🗑️</button>
+            </div>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
         </div>
 
         {/* Charts */}

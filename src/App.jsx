@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="flex">
         <Dashboard />
-        <div className="flex-1 p-6">
+        <div className="flex-1">
           <Routes>
             <Route path="/dashboard" element={<Overview />} />
             <Route path="/products" element={<Cars />} />

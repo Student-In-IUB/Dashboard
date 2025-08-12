@@ -112,7 +112,7 @@ const Sales = () => {
           ].map((metric, idx) => (
             <div
               key={idx}
-              className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300"
+              className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300 custom-hover hover:translate-y-1 duration-300"
             >
               <div className="px-4 py-5 sm:p-6">
                 <span className="flex items-center text-sm font-medium text-blue-600">

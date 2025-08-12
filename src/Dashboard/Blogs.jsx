@@ -61,8 +61,8 @@ function Blogs() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-5">
           <div className="flex flex-col gap-5">
             {/* Total Blogs Card */}
-            <div className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300">
-              <div className="px-4 py-5 sm:p-6">
+            <div className="bg-white bg-opacity-100 backdrop-blur-lg overflow-hidden shadow-lg rounded-xl border border-blue-300 custom-hover hover:translate-y-1 duration-30">
+              <div className="px-4 py-5 sm:p-6 ">
                 <span className="flex items-center text-sm font-medium text-blue-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

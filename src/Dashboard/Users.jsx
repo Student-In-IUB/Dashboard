@@ -95,7 +95,7 @@ const Users = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow p-3 border border-blue-200"
+              className="bg-white rounded-lg shadow p-3 border border-blue-200 custom-hover hover:translate-y-1 duration-300"
             >
               <div className="flex items-center">
                 <svg
@@ -151,88 +151,90 @@ const Users = () => {
             </div>
           </div>
 
-          {/* Table with horizontal scroll for mobile */}
-          <div className="overflow-x-auto">
-            <div className="min-w-[600px]"> {/* Minimum width for small screens */}
-              <table className="w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    {["Name", "Email", "Role", "Status", "Actions"].map((head, i) => (
-                      <th
-                        key={i}
-                        className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider whitespace-nowrap"
-                      >
-                        {head}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {users.map((user, index) => (
-                    <tr key={index}>
-                      {/* Name */}
-                      <td className="px-3 py-3 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center bg-gray-200 text-blue-700 font-bold">
-                            {user.initial}
-                          </div>
-                          <div className="ml-2 sm:ml-3 text-xs sm:text-sm font-medium text-blue-700 truncate max-w-[120px]">
-                            {user.name}
-                          </div>
-                        </div>
-                      </td>
+         {/* Table with horizontal scroll for mobile */}
+<div className="overflow-x-auto -mx-2 sm:mx-0">
+  <div className="min-w-full sm:min-w-0">
+    <table className="w-full divide-y divide-gray-200 text-xs sm:text-sm table-fixed">
+      <thead className="bg-gray-50 sticky top-0 z-10">
+        <tr>
+          {["Name", "Email", "Role", "Status", "Actions"].map((head, i) => (
+            <th
+              key={i}
+              className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
+            >
+              {head}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="bg-white divide-y divide-gray-200">
+        {users.map((user, index) => (
+          <tr key={index}>
+            {/* Name */}
+            <td className="px-3 py-3 truncate max-w-[90px] sm:max-w-[120px]">
+              <div className="flex items-center">
+                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full flex items-center justify-center bg-gray-200 text-blue-700 font-bold">
+                  {user.initial}
+                </div>
+                <div className="ml-2 sm:ml-3 text-xs sm:text-sm font-medium text-blue-700 truncate">
+                  {user.name}
+                </div>
+              </div>
+            </td>
 
-                      {/* Email */}
-                      <td className="px-3 py-3 whitespace-nowrap text-xs sm:text-sm text-gray-900 truncate max-w-[150px]">
-                        {user.email}
-                      </td>
+            {/* Email */}
+            <td className="px-3 py-3 truncate max-w-[110px] sm:max-w-[150px] text-gray-900">
+              {user.email}
+            </td>
 
-                      {/* Role */}
-                      <td className="px-3 py-3 whitespace-nowrap">
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-800 text-blue-100">
-                          {user.role}
-                        </span>
-                      </td>
+            {/* Role */}
+            <td className="px-3 py-3 whitespace-nowrap">
+              <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-800 text-blue-100">
+                {user.role}
+              </span>
+            </td>
 
-                      {/* Status */}
-                      <td className="px-3 py-3 whitespace-nowrap">
-                        <span
-                          className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            user.status === "verified"
-                              ? "bg-green-800 text-green-100"
-                              : "bg-red-800 text-red-100"
-                          }`}
-                        >
-                          {user.status}
-                        </span>
-                      </td>
+            {/* Status */}
+            <td className="px-3 py-3 whitespace-nowrap">
+              <span
+                className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                  user.status === "verified"
+                    ? "bg-green-800 text-green-100"
+                    : "bg-red-800 text-red-100"
+                }`}
+              >
+                {user.status}
+              </span>
+            </td>
 
-                      {/* Actions */}
-                      <td className="px-3 py-3 whitespace-nowrap">
-                        <button className="flex items-center text-xs sm:text-sm text-indigo-600 hover:text-indigo-900">
-                          Manage
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="ml-1"
-                          >
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+            {/* Actions */}
+            <td className="px-3 py-3 whitespace-nowrap">
+              <button className="flex items-center text-xs sm:text-sm text-indigo-600 hover:text-indigo-900">
+                Manage
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="ml-1"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
         </div>
       </main>
     </div>
