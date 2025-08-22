@@ -15,6 +15,7 @@ function App() {
         <Dashboard />
         <div className="flex-1">
           <Routes>
+            <Route path="/" element={<Overview />} />
             <Route path="/dashboard" element={<Overview />} />
             <Route path="/products" element={<Cars />} />
             <Route path="/users" element={<Users />} />
