@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 const Dashboard = () => {
@@ -37,9 +38,9 @@ const Dashboard = () => {
       <div
         className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           md:translate-x-0 transform transition-transform duration-300 ease-in-out
-          h-full w-[250px] text-center bg-white p-4 flex flex-col border-r border-gray-300 shadow-md 
+          h-full w-full md:w-[250px] text-center bg-white p-4 flex flex-col border-r border-gray-300 shadow-md 
           fixed md:sticky top-0 z-40`}
-        style={{ height: '100vh' }}
+        style={{ height: "100vh" }}
       >
         {/* Sidebar toggle button (visible on desktop) */}
         <button
@@ -65,10 +66,11 @@ const Dashboard = () => {
             <line x1="4" x2="20" y1="18" y2="18"></line>
           </svg>
         </button>
-        
+
+        {/* Sidebar nav */}
         <nav className="mt-8 flex-grow">
           <a href="/dashboard" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -91,7 +93,7 @@ const Dashboard = () => {
             </div>
           </a>
           <a href="/products" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -115,7 +117,7 @@ const Dashboard = () => {
             </div>
           </a>
           <a href="/users" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -139,7 +141,7 @@ const Dashboard = () => {
             </div>
           </a>
           <a href="/sales" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -161,7 +163,7 @@ const Dashboard = () => {
             </div>
           </a>
           <a href="/orders" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -184,7 +186,7 @@ const Dashboard = () => {
             </div>
           </a>
           <a href="/admin-blogs" data-discover="true">
-            <div className="flex items-center p-4 text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
+            <div className="flex items-center p-4 text-base md:text-sm font-bold text-blue-700 rounded-lg hover:bg-gray-200 transition-colors mb-2">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -206,7 +208,7 @@ const Dashboard = () => {
 
       {/* Overlay for mobile (click to close sidebar) */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
           onClick={toggleSidebar}
         ></div>
