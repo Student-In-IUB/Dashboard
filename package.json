@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Student-in-IUB.github.io/Dashboard-1/",
+  "homepage": "https://Student-In-IUB.github.io/Dashboard-1/",
 
   "scripts": {
     "dev": "vite",
